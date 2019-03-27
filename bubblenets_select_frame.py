@@ -1,4 +1,4 @@
-# Quickly annotate multiple images per video using BubbleNets suggested frames.
+# Quickly annotate images using BubbleNets suggested frames.
 # Brent Griffin, 181127
 # Questions? griffb@umich.edu
 import numpy as np; import cv2; import IPython; import copy; import glob; import os
@@ -9,12 +9,10 @@ sys.path.insert(0, os.path.join(cwd, 'methods', 'annotate_suggest'));
 from grabCutClass import * 
 from videoProcessor import *
 from annotation_suggester import *
+from color_hist_frame_select import *
 from ResNet_preprocess import *
 from BubbleNets_frame_select import *
-from color_hist_frame_select import *
 from BubbleNets import bn_utils
-
-# TODO:
 
 user_scale = True
 user_select = True
@@ -25,7 +23,7 @@ def get_user_annotation(videoDir):
 	annotationDir = os.path.join(videoDir, 'usrAnnotate')
 	if not os.path.isdir(annotationDir):
 		os.makedirs(annotationDir)
-	imageDir = os.path.join(videoDir, 'srcSegmentation')
+	imageDir = os.path.join(videoDir, 'src')
 	imageFiles = glob.glob(os.path.join(imageDir,'*'))
 	imageFiles.sort()
 	# Get list of suggested annotations.
@@ -76,7 +74,7 @@ def get_user_annotation(videoDir):
 						break
 				except:
 					print ('Image ') + str(annotationImageIdx) + (' does not exist!')
-			outputMaskDir = os.path.join(annotationDir,os.path.basename(imageDir))
+			outputMaskDir = os.path.join(annotationDir,os.path.basename(imageDir).split('.')[0] + '.png')
 			# Let user annotate selected image.
 			GrabCutter(imageDir, outputMaskDir, windowx, windowy, scale)
 			save_extra_image_copy(imageDir, videoDir, nAntImgs)
@@ -111,7 +109,7 @@ def main():
 	# Get BubbleNets suggested annotated frame.
 	BubbleNets_sort(rawDataDir, model='BNLF')
 	BubbleNets_sort(rawDataDir, model='BN0')
-	color_hist_frame_select(rawDataDir, annotate_rate=50)
+	color_hist_frame_select(rawDataDir, annotate_rate=int(10e6))
 	# Cycle through each video.
 	for i, videoName in enumerate(videoList):
 		# Misc. setup.

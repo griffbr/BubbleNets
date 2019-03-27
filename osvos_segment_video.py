@@ -1,5 +1,6 @@
 import numpy as np; 
 import cv2; 
+import datetime
 import IPython; import copy; import glob; import os
 import sys; 
 sys.path.insert(0, './methods/fgbgSeg/');
@@ -9,13 +10,6 @@ from osvos_marshal_seg import *
 
 # Brent Griffin, 180205
 # Questions? griffb@umich.edu
-
-# Current tasks:
-# Create a list of dependencies.
-
-# Future tasks:
-# Enable user to generate an annotation on the spot.
-# Add post-processing segmentation techniques.
 
 def main():
 	main_dir = os.getcwd()
@@ -30,18 +24,17 @@ def main():
 		# Misc. setup.
 		video_dir = os.path.join(raw_data_dir, video_name)
 		annotation_dir = os.path.join(video_dir, 'usrAnnotate')
-		if os.path.isdir(os.path.join(video_dir, 'srcSegmentation')):
-			image_dir = os.path.join(video_dir, 'srcSegmentation')
+		if os.path.isdir(os.path.join(video_dir, 'src')):
+			image_dir = os.path.join(video_dir, 'src')
 		else:
 			image_dir = os.path.join(video_dir, 'src')
 		# Get results file location from parameter file.
-		param_file = os.path.join(video_dir, 'videoManipulationParam.txt')
-		load_param = open(param_file, 'r')
+		path_unique = datetime.datetime.now().strftime("%y-%m-%d")
 		# If OS-based error for directory, consider using os.path.join()
 		result_dir = os.path.join(main_dir, 'results', 'results_' + 
-			load_param.read().splitlines()[13], 'fgbgSeg')
+			path_unique, 'fgbgSeg')
 		# Get OSVOS result for each video.
-		osvos_segment(image_dir, annotation_dir, result_dir, video_name, data_dir)
+		osvos_segment(image_dir, annotation_dir, result_dir, video_name, data_dir, iters=500)
 		print ('Finished with ' + video_name + ' segmenation.\n\n')
 
 	# Placeholder for post-processing (e.g., n-object hypothesis, n-pixel mask padding).

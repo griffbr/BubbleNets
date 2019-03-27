@@ -30,7 +30,7 @@ def resnet_process_data_dir(raw_data_dir):
 		if not os.path.isfile(pickle_out):
 			print ('ResNet preprocessing for ' + video_name)
 			# Image directory info.
-			img_dir = os.path.join(raw_data_dir, video_name, 'srcSegmentation')
+			img_dir = os.path.join(raw_data_dir, video_name, 'src')
 			img_list = sorted(glob.glob(os.path.join(img_dir, '*')))
 
 			# Pre-process using ResNet.

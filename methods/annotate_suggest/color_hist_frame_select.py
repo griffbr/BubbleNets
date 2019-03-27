@@ -45,12 +45,12 @@ def color_hist_frame_select(raw_data_dir, annotate_rate = 50):
 		suggest.annotation_vector_idx = get_prev_frame_indices(video_dir)
 
 		# Add new annotation frames using color histogram-based selection.
-		for i in range(0,suggest.n_manip_frames, annotate_rate):
+		for i in range(annotate_rate, suggest.n_manip_frames, annotate_rate):
 			next_idx, _ = suggest.suggest_next_frame()	
 			suggest.annotation_vector_idx = np.append(suggest.annotation_vector_idx,next_idx)
 		
 		# Write suggestions out to text file.
-		img_files = sorted(glob.glob(os.path.join(video_dir,'srcSegmentation','*')))
+		img_files = sorted(glob.glob(os.path.join(video_dir,'src','*')))
 		statements = ['%i suggested annotations for %s\n' % 
 								(len(suggest.annotation_vector_idx),vid_name)]
 		for i, idx in enumerate(suggest.annotation_vector_idx):

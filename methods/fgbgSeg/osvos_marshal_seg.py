@@ -33,7 +33,7 @@ import cv2
 # List of images.
 # Annotation location.
 # Output mask folder.
-def osvos_segment(image_dir, annotation_dir, mask_dir, seq_name, data_dir, model_name=''):
+def osvos_segment(image_dir, annotation_dir, mask_dir, seq_name, data_dir, model_name='', iters=500):
 	if model_name == '':
 		model_name = seq_name
 	print '\nRunning OSVOS Segmentation for ' + seq_name + '\n'
@@ -47,12 +47,7 @@ def osvos_segment(image_dir, annotation_dir, mask_dir, seq_name, data_dir, model
 	gpu_id = 0
 	train_model = True
 	# Train parameters
-	#max_training_iters = 500
-	#print 'max training iters temp reduced!!!!!!!!!!!!!!!'
-	#max_training_iters = 100
-	#print ('max training iters increased!')
-	max_training_iters = 1000
-	max_training_iters = 50
+	max_training_iters = iters
 	# Define Dataset
 	test_frames = sorted(os.listdir(image_dir))
 	test_imgs = [os.path.join(image_dir, frame) for frame in test_frames]

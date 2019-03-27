@@ -79,7 +79,7 @@ def BubbleNets_sort(raw_data_dir, model='BNLF'):
 			# Write out frame selection to text file.
 			select_idx = rank_bn[-1]
 			img_file = os.path.basename(sorted(glob.glob(os.path.join(
-					raw_data_dir,vid_name,'srcSegmentation','*')))[select_idx])
+					raw_data_dir,vid_name,'src','*')))[select_idx])
 			statements = [model,'\n',str(select_idx),'\n',img_file,'\n']
 			bn_utils.print_statements(text_out, statements)
 		sess.close()
