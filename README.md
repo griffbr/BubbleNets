@@ -1,4 +1,4 @@
-# BubbleNets (in progress)
+# BubbleNets
 Learning to Select the Guidance Frame in Video Object Segmentation by Deep Sorting Frames
 
 Contact: Brent Griffin (griffb at umich dot edu)
@@ -24,10 +24,13 @@ __Video Description:__ https://youtu.be/0kNmm8SBnnU
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0kNmm8SBnnU/0.jpg)](https://youtu.be/0kNmm8SBnnU)
 
-__HSR Segmenting Objects at Various Heights.__ HSR's grasp camera faces downward (left) and only collects RGB data for objects in the scene (top right). However, using active perception and video object segmentation (bottom right), HSR can locate and grasp a variety of objects in real time.
-![alt text](https://github.com/griffbr/VOSVS/blob/master/figure/annotation_example.png "VOS-based Visual Servo Control, Active Depth Estimation, and Mobile Robot Grasping")
+__Qualitative Comparison on DAVIS 2017 Validation Set:__ Segmentations from different annotation frame selection strategies.
+![alt text](https://github.com/griffbr/BubbleNets/blob/master/figure/qual_compare.jpg "Qualitative Comparison of Frame Selection Strategies")
 <br />
 
+__BubbleNets Framework:__ Deep sorting compares and swaps adjacent frames using their predicted relative performance.
+![alt text](https://github.com/griffbr/BubbleNets/blob/master/figure/bubblenets.jpg "BubbleNets Framework")
+<br />
 
 ## Setup
 
@@ -40,11 +43,11 @@ Remove folders from rawData if you do not need to train a new model for them.
 
 ## Execution Process
 
-Run ``./bubblenets_select_frame.py`` <br />
+__Run__ ``./bubblenets_select_frame.py`` <br />
 Uses automatic BubbleNets annotation frame selection with GrabCut-based user annotation tool. BubbleNet selects are stored in a text file (e.g., ``./rawData/scooter-black/frame_selection/BN0.txt``), so using another annotation tool is also possible. <br />
 [native Python, has scikit dependency, requires TensorFlow]
 
-Run ``./osvos_segment_video.py`` <br />
+__Run__ ``./osvos_segment_video.py`` <br />
 Runs OSVOS segmentation given user-provided annotated training frames. Trained OSVOS models are stored in ``./data/models/``. Results are timestamped and will appear in the ``./results/`` folder. <br />
 [native Python, requires TensorFlow]
 
