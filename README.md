@@ -4,7 +4,7 @@ Learning to Select the Guidance Frame in Video Object Segmentation by Deep Sorti
 Contact: Brent Griffin (griffb at umich dot edu)
 
 ## Publication
-[BubbleNets: Learning to Select the Guidance Frame in Video Object Segmentation by Deep Sorting Frames](https://arxiv.org/abs/1903.08336 "arXiv Paper")<br />
+[BubbleNets: Learning to Select the Guidance Frame in Video Object Segmentation by Deep Sorting Frames](http://arxiv.org/abs/1903.11779 "arXiv Paper")<br />
 [Brent A. Griffin](https://www.griffb.com) and [Jason J. Corso](http://web.eecs.umich.edu/~jjcorso/)<br />
 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2019
 
