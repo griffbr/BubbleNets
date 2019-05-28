@@ -20,9 +20,9 @@ Please cite our paper if you find it useful for your research.
 
 ## Method
 
-__Video Description:__ https://youtu.be/0kNmm8SBnnU
+__CVPR 2019 Oral Presentation:__ https://youtu.be/XBEMuFVC2lg
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0kNmm8SBnnU/0.jpg)](https://youtu.be/0kNmm8SBnnU)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/XBEMuFVC2lg/0.jpg)](https://youtu.be/XBEMuFVC2lg)
 
 __Qualitative Comparison on DAVIS 2017 Validation Set:__ Segmentations from different annotation frame selection strategies.
 ![alt text](https://github.com/griffbr/BubbleNets/blob/master/figure/qual_compare.jpg "Qualitative Comparison of Frame Selection Strategies")
