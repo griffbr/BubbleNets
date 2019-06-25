@@ -51,6 +51,10 @@ __Run__ ``./osvos_segment_video.py`` <br />
 Runs OSVOS segmentation given user-provided annotated training frames. Trained OSVOS models are stored in ``./data/models/``. Results are timestamped and will appear in the ``./results/`` folder. <br />
 [native Python, requires TensorFlow]
 
+## Generating Training Labels (New)
+
+Code for generating new BubbleNets training labels is located in the ``./generate_labels`` folder.
+
 ## Included External Files
 
 S. Caelles*, K.K. Maninis*, J. Pont-Tuset, L. Leal-Taixé, D. Cremers, and L. Van Gool. <br />
