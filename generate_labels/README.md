@@ -15,9 +15,9 @@ Please cite our paper if you find it useful for your research.
 ```
 
 ### Demo
-Just run ``./train_osvos_models.py`` with TensorFlow sourced.
-This will train all of the OSVOS segmentation models used in the paper.
-Results will be dated and added to the ``./results`` folder.
+Just run ``./gen_seg_performance_labels.py`` with TensorFlow sourced.
+This will generate new, frame-specific performance labels (like those used to train BubbleNets in our paper).
+New labels are saved in the ``./labels`` folder.
 
 __Generating Training Labels:__ We generate a training label y for each frame, which represents the segmentation performance associated with selecting that frame for annotation.
 ![alt text](https://github.com/griffbr/BubbleNets/blob/master/figure/label_generation.jpg "Generating Training Labels")
@@ -28,7 +28,7 @@ Add new data to ``./source_data/`` folder following the examples already provide
 Each video folder in source_data will be used to generate new frame-specific performance labels for training BubbleNets.
 Generated labels are saved in ``./labels/``.
 
-Each unique video folder contains source images in the ``src`` folder and ground truth annotation masks in the ``usrAnnotate`` folder.
+Each unique video folder contains source images in the ``src`` folder and ground truth annotation masks in the ``ground_truth`` folder.
 The mask should have the same name as its corresponding source image (e.g., 00054.png).
 
 The image-trained process (currently OSVOS segmentation) and evaluation (currently mean Jaccard measure and contour accuracy) can both be changed in lines 59-63 in ``./gen_seg_performance_labels.py``.
@@ -39,8 +39,9 @@ To change this, edit line 24 (``TRAIN_ITER = 500``) in  ``./gen_seg_performance_
 
 ### Execution Process
 Run ``./gen_seg_performance_labels.py`` [native Python, requires TensorFlow].<br />
-Model and segmentation files generated in ``./temp_results`` can be deleted to save disk space.<br />
-Newly generated labels are saved in ``./labels``.
+Newly generated labels are saved in ``./labels``.<br />
+Model and segmentation files generated in ``./temp_results`` can be deleted to save disk space.
+
 
 ## Included External Files
 
