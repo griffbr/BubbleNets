@@ -73,6 +73,6 @@ This code is available for non-commercial research purposes only.
 
 ## Misc.
 
-__Interview with Robin.ly at CVPR discussing BubbleNets:__ https://youtu.be/v5FbjQfl5u4
+__Interview with Robin.ly discussing BubbleNets:__ https://youtu.be/v5FbjQfl5u4
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/v5FbjQfl5u4/0.jpg)](https://youtu.be/v5FbjQfl5u4)
