@@ -15,7 +15,8 @@ import sys
 from PIL import Image
 import numpy as np
 import tensorflow as tf
-slim = tf.contrib.slim
+# slim = tf.contrib.slim
+import slim # changed
 import matplotlib.pyplot as plt
 # Import OSVOS files
 root_folder = os.path.dirname(os.path.realpath(__file__))

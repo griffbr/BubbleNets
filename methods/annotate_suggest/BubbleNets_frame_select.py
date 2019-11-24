@@ -2,7 +2,8 @@
 # Brent Griffin, 181128, griffb@umich.edu
 
 import tensorflow as tf
-from tensorflow.contrib import slim
+#from tensorflow.contrib import slim
+import slim # changed
 import IPython
 import numpy as np
 from copy import deepcopy
@@ -11,7 +12,6 @@ import os; import glob; import time
 from BubbleNets import bn_input
 from BubbleNets import bn_models
 from BubbleNets import bn_utils
-
 
 def BubbleNets_sort(raw_data_dir, model='BNLF'):
 	# Sorting parameters.

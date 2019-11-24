@@ -24,7 +24,8 @@ from PIL import Image
 # Some modifications by griffb@umich.edu.
 import IPython
 
-slim = tf.contrib.slim
+# slim = tf.contrib.slim
+import slim # changed
 
 
 def osvos_arg_scope(weight_decay=0.0002):
