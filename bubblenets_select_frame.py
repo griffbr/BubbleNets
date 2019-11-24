@@ -1,6 +1,8 @@
 # Quickly annotate images using BubbleNets suggested frames.
 # Brent Griffin, 181127
 # Questions? griffb@umich.edu
+import os
+os.environ['TF_CPPMIN_LOG_LEVEL'] = '3' # to disable the annoying tensorflow deprecation warnings
 import numpy as np; import cv2; import IPython; import copy; import glob; import os
 import sys; 
 cwd = os.getcwd()
