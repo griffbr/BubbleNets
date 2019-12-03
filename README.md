@@ -1,4 +1,5 @@
 # BubbleNets
+TESTING OUT IDEAS BY SUDHAN
 Learning to Select the Guidance Frame in Video Object Segmentation by Deep Sorting Frames
 
 Contact: Brent Griffin (griffb at umich dot edu)

@@ -1,4 +1,6 @@
+<<<<<<< HEAD
 *.DS_Store
 *.pyc
 *.ckpt
+*.pyc 
 data/rawData/

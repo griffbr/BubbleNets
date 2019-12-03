@@ -3,7 +3,8 @@
 import IPython
 
 import tensorflow as tf
-from tensorflow.contrib import slim
+# from tensorflow.contrib import slim
+import slim # changed
 
 def BNLF(inputs, is_training=True, scope='deep_regression', n_frames=5):
 	with tf.variable_scope(scope, 'deep_regression', [inputs]):

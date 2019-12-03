@@ -12,7 +12,9 @@ import numpy as np
 import tensorflow as tf
 import time
 
-from tensorflow.contrib import slim
+# from tensorflow.contrib import slim
+import slim # changed
+
 
 import sys; import glob; import os; import IPython; import cPickle as pickle
 
