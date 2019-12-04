@@ -6,6 +6,9 @@ import random
 import IPython
 import math
 
+# TODO: only use cluster centroids as reference frames
+# TODO: 
+
 class BN_Input:
 	def __init__(self, vector_file, n_ref=3):
 		self.vectors = pickle.load(open(vector_file,'rb'))['frame_resnet_vectors']

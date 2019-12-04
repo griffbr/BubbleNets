@@ -92,7 +92,8 @@ def save_extra_image_copy(image_dir, video_dir, annotation_frame_num):
 		cv2.imread(image_dir))
 
 def read_annotation_list(text_file):
-	read_list = bn_utils.read_list_file(text_file)
+	read_list = bn_utils.read_list_file(t
+		text_file)
 	n_ant = int(read_list[0].split(' ')[0])
 	ant_idx = []; ant_file = []
 	for i in range(n_ant):
