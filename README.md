@@ -45,7 +45,7 @@ Remove folders from rawData if you do not need to train a new model for them.
 ## Execution Process
 
 __Run__ ``./bubblenets_select_frame.py`` <br />
-Uses automatic BubbleNets annotation frame selection with GrabCut-based user annotation tool. BubbleNet selects are stored in a text file (e.g., ``./rawData/scooter-black/frame_selection/BN0.txt``), so using another annotation tool is also possible. <br />
+Uses automatic BubbleNets annotation frame selection with GrabCut-based user annotation tool. BubbleNets selections are stored in a text file (e.g., ``./rawData/scooter-black/frame_selection/BN0.txt``), so using another annotation tool is also possible. <br />
 [native Python, has scikit dependency, requires TensorFlow]
 
 __Run__ ``./osvos_segment_video.py`` <br />
